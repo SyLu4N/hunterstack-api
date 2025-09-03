@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>Política de Segurança da Informação</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #1A1D23;
+      margin: 0 60px;
+      color: white;
+    }
+
+    h2 {
+      color: white;
+    }
+
+    span {
+      font-size: 14px;
+      margin-top: 0px;
+    }
+
+    header>img {
+      margin-top: 60px;
+      width: 300px;
+    }
+
+    main>p {
+      font-size: 20px;
+      text-align: justify;
+      font-weight: bold;
+      color: #BBBBBB;
+      line-height: 35px;
+    }
+
+    footer>div {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      margin-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    footer>div>img {
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src='https://www.hunterstack.io/hubfs/Logo-white.png' alt='Logotipo da HunterStack.io' />
+
+    <h2>Política de Segurança da Informação.</h2>
+    <p>{{policyCategory}} | {{policyTitle}}</p>
+
+    <span>{{policyDate}} - {{policySource}}</span>
+  </header>
+
+  <main>
+    <p>{{policyDescription}}</p>
+  </main>
+
+  <footer>
+    <div>
+      <img src='https://www.hunterstack.io/hubfs/Logo-white.png' alt='Logotipo da HunterStack.io' />
+      <span>© 2023 HunterStack.io. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+</body>
+
+</html>

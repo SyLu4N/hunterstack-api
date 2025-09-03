@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  api-hunterstackio-postgres:
+    image: postgres:16
+    container_name: api-hunterstackio-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: hunterstackio
+      POSTGRES_PASSWORD: 08082023cv
+      POSTGRES_DB: hunterstackio
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

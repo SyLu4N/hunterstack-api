@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Policy {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  description String   @db.Text
+  summary     String   @db.Text
+  source      String
+  createdAt   DateTime @default(now())
+
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+
+  @@map("Policies")
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  slug      String   @unique
+  name      String
+  createdAt DateTime @default(now())
+
+  policies Policy[]
+
+  @@map("Categories")
+}
