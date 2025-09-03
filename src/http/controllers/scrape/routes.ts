@@ -29,7 +29,7 @@ export async function scrapingRoutes(app: FastifyInstance) {
   });
 
   app.get(
-    '/export/policy/:slug',
+    '/scraping/policy/:slug/pdf',
     {
       schema: {
         summary: 'Exporta uma Política para PDF',

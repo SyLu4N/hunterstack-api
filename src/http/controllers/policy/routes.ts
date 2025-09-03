@@ -18,7 +18,7 @@ const FetchPoliciesQuerySchema = z.object({
 });
 
 export async function policiesRoutes(app: FastifyInstance) {
-  app.get('/policy/:slug', {
+  app.get('/policies/:slug', {
     schema: {
       summary: 'Retorna uma política pelo slug',
       description: 'Busca uma política específica através do slug.',

@@ -18,7 +18,7 @@ describe('Get Category (e2e)', () => {
     });
 
     const response = await request(app.server)
-      .get(`/category/category-1`)
+      .get(`/categories/category-1`)
       .send();
 
     expect(response.statusCode).toEqual(200);
@@ -31,7 +31,7 @@ describe('Get Category (e2e)', () => {
 
   it('Deve retornar 400 caso a categoria seja inválida.', async () => {
     const response = await request(app.server)
-      .get(`/category/NOT-EXIST`)
+      .get(`/categories/NOT-EXIST`)
       .send();
 
     expect(response.statusCode).toEqual(400);

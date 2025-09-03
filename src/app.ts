@@ -20,8 +20,39 @@ import { scrapingRoutes } from './http/controllers/scrape/routes';
 export const app = fastify();
 
 app.register(fastifyCors, {
-  origin: 'http://localhost:3000',
+  origin: '*',
 });
+
+/* app.register(
+  fastifyCors,
+  (
+    req: FastifyRequest,
+    callback: (err: Error | null, options?: any) => void,
+  ) => {
+    let corsOptions: any;
+
+    if (req.url?.startsWith('/scraping')) {
+      corsOptions = {
+        origin: process.env.CLIENT_APP_ADM_URL,
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: true,
+      };
+    } else if (
+      req.url?.startsWith('/policies') ||
+      req.url?.startsWith('/categories')
+    ) {
+      corsOptions = {
+        origin: process.env.CLIENT_APP_URL,
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: true,
+      };
+    }
+
+    callback(null, corsOptions);
+  },
+); */
 
 app.register(fastifyCookie);
 app.register(fastifyMultipart);

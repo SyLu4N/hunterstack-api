@@ -15,7 +15,7 @@ const FetchCategoriesQuerySchema = z.object({
 });
 
 export async function categoriesRoutes(app: FastifyInstance) {
-  app.get('/category/:slug', {
+  app.get('/categories/:slug', {
     schema: {
       summary: 'Retorna uma categoria pelo slug',
       description: 'Busca uma categoria específica através do slug.',

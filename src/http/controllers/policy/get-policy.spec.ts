@@ -24,7 +24,7 @@ describe('Get Policy (e2e)', () => {
 
     await createPolicyPrismaTest({ data: dataPolicy });
 
-    const response = await request(app.server).get(`/policy/policy-1`).send();
+    const response = await request(app.server).get(`/policies/policy-1`).send();
     const policy = response.body;
 
     expect(response.statusCode).toEqual(200);
@@ -39,7 +39,9 @@ describe('Get Policy (e2e)', () => {
   // ---
 
   it('Deve retornar 404 caso a policy nao seja encontrada.', async () => {
-    const response = await request(app.server).get(`/policy/NOT-EXIST`).send();
+    const response = await request(app.server)
+      .get(`/policies/NOT-EXIST`)
+      .send();
 
     expect(response.statusCode).toEqual(404);
     expect(response.body).toHaveProperty('message');

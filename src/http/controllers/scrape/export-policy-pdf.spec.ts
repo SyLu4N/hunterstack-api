@@ -26,7 +26,9 @@ describe('Export Policy PDF (e2e)', () => {
 
     const { slug } = policy;
 
-    const response = await request(app.server).get(`/export/policy/${slug}`);
+    const response = await request(app.server).get(
+      `/scraping/policy/${slug}/pdf`,
+    );
 
     expect(response.statusCode).toEqual(200);
     expect(response.headers['content-type']).toEqual('application/pdf');
@@ -37,7 +39,9 @@ describe('Export Policy PDF (e2e)', () => {
   // ---
 
   it('Deve retornar 404 caso a política não seja encontrada', async () => {
-    const response = await request(app.server).get(`/export/policy/NOT-EXIST`);
+    const response = await request(app.server).get(
+      `/scraping/policy/NOT-EXIST/pdf`,
+    );
 
     expect(response.statusCode).toEqual(404);
     expect(response.body).toHaveProperty('message');
