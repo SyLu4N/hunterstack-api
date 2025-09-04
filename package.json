@@ -9,14 +9,14 @@
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "node build/index.cjs",
+    "start": "node dist/index.js",
     "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap",
     "test": "vitest run --project unit",
     "test:watch": "vitest --project unit",
     "test:e2e": "vitest run --project e2e",
     "test:e2e:watch": "vitest --project e2e",
     "test:coverage": "vitest run --coverage",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate && npx puppeteer browsers install chrome"
   },
   "keywords": [],
   "author": "",
