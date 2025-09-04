@@ -1,4 +1,4 @@
-import { app } from '@/app';
+ import { app } from '@/app';
 import { createPolicyPrismaTest } from '@/utils/test/createPolicyPrisma';
 import request from 'supertest';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
