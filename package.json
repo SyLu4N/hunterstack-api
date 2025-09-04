@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "node build/index.cjs",
-    "build": "tsup src --out-dir build",
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap",
     "test": "vitest run --project unit",
     "test:watch": "vitest --project unit",
     "test:e2e": "vitest run --project e2e",
