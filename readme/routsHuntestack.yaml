@@ -1,0 +1,237 @@
+type: collection.insomnia.rest/5.0
+name: Hunterstack.io
+meta:
+  id: wrk_48a67b8d7c7d4ec481c484de4305bb7d
+  created: 1756932263322
+  modified: 1756932263322
+  description: ""
+collection:
+  - name: Policies
+    meta:
+      id: fld_fe4bdcef96884e17a26ece11fbdbc0f1
+      created: 1756932277631
+      modified: 1756932277631
+      sortKey: -1756932277631
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/policies/:slug"
+        name: Get Policy
+        meta:
+          id: req_70cbdb90a57e4f67abaa3a8de9ee97d4
+          created: 1756932323352
+          modified: 1756988000632
+          isPrivate: false
+          description: ""
+          sortKey: -1756932323352
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.5.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: "123"
+      - url: "{{ _.BASE_URL }}/policies"
+        name: Fetch Policies
+        meta:
+          id: req_f468ebecde92421ba275f37cb183bd85
+          created: 1756932324544
+          modified: 1756988226348
+          isPrivate: false
+          description: ""
+          sortKey: -1756932324544
+        method: GET
+        parameters:
+          - id: pair_14e4595c85ba4b33ba1db75c69c5000e
+            name: page
+            value: ""
+            description: Página
+            disabled: true
+          - id: pair_653666a287384429a0551f32e31adf8c
+            name: title
+            value: ""
+            description: Filtrar por Título
+            disabled: true
+          - id: pair_2a941fc24ec84ab6b363beca7cb4d019
+            name: search
+            value: ""
+            description: Procurar por tema, descrição ou reusmo.
+            disabled: true
+          - id: pair_019dee3047f6427fa384eba22a58eede
+            name: slug
+            value: ""
+            description: Filtrar por slug
+            disabled: true
+          - id: pair_8799bd7088d7420dbd17a64bd6c794da
+            name: category
+            value: ""
+            description: Filtrar por categoria (nome da categoria)
+            disabled: true
+          - id: pair_1366fa8855b542eab1bdd1b44a119039
+            name: orderByCreated
+            value: ""
+            description: Ordenação. (asc ou desc)
+            disabled: true
+            type: text
+            multiline: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.5.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Categories
+    meta:
+      id: fld_12ab1a991abc42cd9b847e3b762ebda3
+      created: 1756932282139
+      modified: 1756932282139
+      sortKey: -1756932282139
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/categories/:slug"
+        name: Get Category
+        meta:
+          id: req_6545c684641b400a80ab0ac65a466726
+          created: 1756932338297
+          modified: 1756993773094
+          isPrivate: false
+          description: ""
+          sortKey: -1756932338297
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.5.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: governanca
+      - url: "{{ _.BASE_URL }}/categories"
+        name: Fetch Categories
+        meta:
+          id: req_6bf13c56ae844e25b50a808f40c3262d
+          created: 1756932339940
+          modified: 1756993728719
+          isPrivate: false
+          description: ""
+          sortKey: -1756932339940
+        method: GET
+        parameters:
+          - id: pair_d8b68ad985f84db292060321a437966b
+            name: page
+            value: ""
+            description: Página
+            disabled: true
+          - id: pair_acf9e60b7cdd41bb8ece351033306a5f
+            name: name
+            value: ""
+            description: Filtar categorias por nome
+            disabled: true
+          - id: pair_f068511065b74887a5fdbccfe27d013f
+            name: orderByCreated
+            value: ""
+            description: Ordernação. (asc ou desc)
+            disabled: true
+        headers:
+          - name: User-Agent
+            value: insomnia/11.5.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Scraping
+    meta:
+      id: fld_7f712be5871c43c7b93b9675823e4374
+      created: 1756932289684
+      modified: 1756932289684
+      sortKey: -1756932289684
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}/scraping/policy/:slug/pdf"
+        name: Export Policy PDF
+        meta:
+          id: req_b4a84d1e5bf14069a517b50587f3d722
+          created: 1756932349084
+          modified: 1756993515977
+          isPrivate: false
+          description: ""
+          sortKey: -1756932349084
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.5.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: slug
+            value: governanca-da-seguranca-da-informacao
+      - url: "{{ _.BASE_URL }}/scraping"
+        name: Scraping
+        meta:
+          id: req_2822ca62f147495eb2ea6241700e38c6
+          created: 1756932351237
+          modified: 1756992055309
+          isPrivate: false
+          description: ""
+          sortKey: -1756932351237
+        method: GET
+        parameters:
+          - id: pair_17ab9f8fbd6a4e91820acc18b639e532
+            name: url
+            value: https://www.esri-portugal.pt/pt-pt/sobre/sobre-a-esri/legal/visao-geral/politicas/politica-de-seguranca-da-informacao
+            description: URL da página para realizarmos o scraping
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.5.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_aa518574695eb2bf99a0144c8338f7e40756738a
+    created: 1756932263330
+    modified: 1756932263330
+environments:
+  name: Base Environment
+  meta:
+    id: env_aa518574695eb2bf99a0144c8338f7e40756738a
+    created: 1756932263326
+    modified: 1756987876602
+    isPrivate: false
+  data:
+    BASE_URL: https://hunterstack-api.onrender.com
