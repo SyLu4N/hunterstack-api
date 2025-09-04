@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+  # Banco principal
   api-hunterstackio-postgres:
     image: postgres:16
     container_name: api-hunterstackio-postgres
@@ -8,10 +9,24 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: hunterstackio
-      POSTGRES_PASSWORD: 08082023cv
+      POSTGRES_PASSWORD: Verde*2025
       POSTGRES_DB: hunterstackio
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  # Banco shadow
+  api-hunterstackio-postgres-shadow:
+    image: postgres:16
+    container_name: api-hunterstackio-postgres-shadow
+    ports:
+      - "5433:5432"   # mapeando para outra porta
+    environment:
+      POSTGRES_USER: sd_hunterstackio
+      POSTGRES_PASSWORD: Verde*2025
+      POSTGRES_DB: sd_hunterstackio
+    volumes:
+      - postgres_shadow_data:/var/lib/postgresql/data
+
 volumes:
   postgres_data:
+  postgres_shadow_data:
