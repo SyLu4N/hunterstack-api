@@ -1,7 +1,8 @@
 export type CategoriaLLM = {
+  title: string;
   category: string;
   description: string;
-  title: string;
+  summary: string;
 };
 
 export type ReturnLLM = {

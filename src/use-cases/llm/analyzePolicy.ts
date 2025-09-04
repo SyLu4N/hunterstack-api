@@ -37,7 +37,7 @@ export class AnalizePolicyUseCase {
           "title": "Título resumido do trecho", 
           "category": "nome da categoria", 
           "description": "artigo completo com parágrafos separados por \\n\\n e listas quando necessário", 
-          "summary": "resumo (max. 250 caracteres)"
+          "summary": "Um resumo (max. 250 caracteres)"
         }
       ],
       "source": "nome da empresa original (apenas nome, sem links)"

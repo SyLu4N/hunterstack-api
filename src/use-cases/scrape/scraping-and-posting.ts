@@ -64,7 +64,7 @@ export class SacrapingAndPostingUseCase {
       }
 
       const newPolicy = await this.createPolicyUseCase.execute({
-        data: { ...policy, source: source, slug, summary: 'RESUME' },
+        data: { ...policy, source: source, slug },
       });
 
       policies.push(newPolicy.policy);
