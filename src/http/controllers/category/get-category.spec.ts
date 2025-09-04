@@ -1,4 +1,4 @@
- import { app } from '@/app';
+import { app } from '@/app';
 import { createCategoryPrismaTest } from '@/utils/test/createCategoryPrisma';
 import request from 'supertest';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
