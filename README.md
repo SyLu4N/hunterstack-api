@@ -86,3 +86,7 @@ npx prisma db seed
 # Rodar o servidor em modo desenvolvimento
 npm run dev
 ```
+
+Rotas Insomnia
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Routes%20Hunterstack&uri=https%3A%2F%2Fgithub.com%2FSyLu4N%2Fhunterstack-api%2Fblob%2Fmain%2Freadme%2FroutsHuntestack.yaml)
