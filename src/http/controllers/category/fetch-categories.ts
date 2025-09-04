@@ -8,10 +8,12 @@ export async function fetchCategories(req: FastifyRequest, res: FastifyReply) {
   const fetchQuerysSchema = z.object({
     page: z.coerce.number().default(1),
 
-    name: z.string({ error: 'Nome da categoria inválido.' }).optional(),
+    name: z
+      .string({ invalid_type_error: 'Nome da categoria inválido.' })
+      .optional(),
 
     orderByCreated: z
-      .enum(['asc', 'desc'], { error: 'Ordenação inválida.' })
+      .enum(['asc', 'desc'], { invalid_type_error: 'Ordenação inválida.' })
       .optional(),
   });
 

@@ -7,16 +7,16 @@ import { z } from 'zod';
 export async function fetchPolicies(req: FastifyRequest, res: FastifyReply) {
   const fetchQuerysSchema = z.object({
     page: z.coerce.number().default(1),
-    title: z.string({ error: 'Título inválido.' }).optional(),
+    title: z.string({ invalid_type_error: 'Título inválido.' }).optional(),
 
-    search: z.string({ error: 'Parametro "Texto" inválido.' }).optional(),
+    search: z.string({ invalid_type_error: 'Parametro "Texto" inválido.' }).optional(),
 
-    slug: z.string({ error: 'Slug da política inválida.' }).optional(),
+    slug: z.string({ invalid_type_error: 'Slug da política inválida.' }).optional(),
 
-    category: z.string({ error: 'Categoria inválida.' }).optional(),
+    category: z.string({ invalid_type_error: 'Categoria inválida.' }).optional(),
 
     orderByCreated: z
-      .enum(['asc', 'desc'], { error: 'Ordenação inválida.' })
+      .enum(['asc', 'desc'], { invalid_type_error: 'Ordenação inválida.' })
       .optional(),
   });
 

@@ -5,7 +5,7 @@ import { exportPolicyPdf } from './export-policy-pdf';
 import { scrapingAndPosting } from './scraping-and-posting';
 
 const ScrapeQuerySchema = z.object({
-  url: z.url({ message: 'URL inválida.' }),
+  url: z.string({ message: 'URL inválida.' }).url({ message: 'URL inválida.' }),
 });
 
 const ExportParamsSchema = z.object({

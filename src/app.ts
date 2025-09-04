@@ -12,7 +12,7 @@ import {
   serializerCompiler,
 } from 'fastify-type-provider-zod';
 
-import { env } from './env';
+import { env } from './env/index';
 import { categoriesRoutes } from './http/controllers/category/routes';
 import { policiesRoutes } from './http/controllers/policy/routes';
 import { scrapingRoutes } from './http/controllers/scrape/routes';

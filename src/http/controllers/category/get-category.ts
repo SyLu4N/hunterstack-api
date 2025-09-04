@@ -7,7 +7,7 @@ import { z } from 'zod';
 
 export async function getCategory(req: FastifyRequest, res: FastifyReply) {
   const categoryParamsSchema = z.object({
-    slug: z.string({ error: 'Slug da categoria inválida.' }),
+    slug: z.string({ invalid_type_error: 'Slug da categoria inválida.' }),
   });
 
   const { slug } = categoryParamsSchema.parse(req.params);

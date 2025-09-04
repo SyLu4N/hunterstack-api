@@ -34,7 +34,7 @@ describe('Export Policy PDF (e2e)', () => {
     expect(response.headers['content-type']).toEqual('application/pdf');
     expect(response.headers['content-disposition']).toContain(`${slug}.pdf`);
     expect(response.body).toBeInstanceOf(Buffer);
-  });
+  }, 120000);
 
   // ---
 

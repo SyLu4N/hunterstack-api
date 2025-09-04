@@ -7,7 +7,7 @@ import { z } from 'zod';
 
 export async function exportPolicyPdf(req: FastifyRequest, res: FastifyReply) {
   const ParamsSchema = z.object({
-    slug: z.string({ error: 'Slug da política inválida.' }),
+    slug: z.string({ invalid_type_error: 'Slug da política inválida.' }),
   });
 
   const { slug } = ParamsSchema.parse(req.params);

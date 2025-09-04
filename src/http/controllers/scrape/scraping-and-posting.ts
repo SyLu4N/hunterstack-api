@@ -14,7 +14,9 @@ export async function scrapingAndPosting(
   res: FastifyReply,
 ) {
   const ScrapeQuerySchema = z.object({
-    url: z.url({ error: 'URL do artigo inválida.' }),
+    url: z.string({ invalid_type_error: 'URL do artigo inválida.' }).url({
+      message: 'URL do artigo inválida',
+    }),
   });
 
   const { url } = ScrapeQuerySchema.parse(req.query);

@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model Policy {
@@ -19,7 +20,7 @@ model Policy {
   category   Category @relation(fields: [categoryId], references: [id])
   categoryId Int
 
-  @@map("Policies")
+  @@map("policies")
 }
 
 model Category {
@@ -30,5 +31,5 @@ model Category {
 
   policies Policy[]
 
-  @@map("Categories")
+  @@map("categories")
 }
