@@ -1,11 +1,9 @@
-import chromium from '@sparticuz/chromium';
-import puppeteer, { Browser } from 'puppeteer-core';
+import puppeteer, { Browser } from 'puppeteer';
 
 export async function createBrowser() {
   const browser = await puppeteer.launch({
-    args: chromium.args,
-    executablePath: await chromium.executablePath(),
     headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
   return browser;
