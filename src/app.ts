@@ -78,7 +78,7 @@ app.register(fastifySwaggerUi, {
 });
 
 app.register(fastifyRateLimit, {
-  max: 5,
+  max: 10,
   timeWindow: '1 second',
 });
 

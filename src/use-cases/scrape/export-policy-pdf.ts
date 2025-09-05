@@ -52,7 +52,8 @@ export class ExportPolicyPdfUseCase {
       const pdfBuffer = Buffer.from(pdfUint8);
 
       return { pdfBuffer };
-    } catch {
+    } catch (error) {
+      console.log(error);
       throw new BadRequestError('Não foi possível gerar o PDF.');
     } finally {
       await browser.close();
